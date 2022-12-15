@@ -1,0 +1,50 @@
+{
+  "name": "nextjs-project-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"*/**/*.{js,ts,tsx,css,md,json}\"",
+    "format:check": "prettier --check \"*/**/*.{js,ts,tsx,css,md,json}\"",
+    "lint:ts": "next lint",
+    "lint:css": "stylelint \"src/**/*.ts\"",
+    "test": "jest",
+    "type-check": "tsc --pretty --noEmit",
+    "prepare": "husky install",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.0",
+    "@mui/x-date-pickers": "^5.0.10",
+    "dayjs": "^1.11.7",
+    "next": "12.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.40.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.15",
+    "@types/styled-components": "^5.1.24",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.2",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "lint-staged": "^13.0.1",
+    "postcss-scss": "^4.0.3",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.5.3",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "4.7.4"
+  }
+}
