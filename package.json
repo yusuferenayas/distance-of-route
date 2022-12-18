@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"*/**/*.{js,ts,tsx,css,md,json}\"",
@@ -18,13 +18,16 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
     "@mui/x-date-pickers": "^5.0.10",
+    "axios": "^1.2.1",
     "dayjs": "^1.11.7",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.40.0",
+    "react-hook-form": "^7.41.0",
+    "react-toastify": "^9.1.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

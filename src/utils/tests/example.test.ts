@@ -1,11 +1,11 @@
-import { exampleFunction } from '../example'
+import ''
 
 describe('Example utils', () => {
   it('example function should always return true', async () => {
     // arrange
 
     // act
-    const res = exampleFunction()
+    const res = console.log()
 
     // assert
     expect(res).toEqual(true)

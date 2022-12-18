@@ -5,7 +5,7 @@ export const FormContainer = styled.div`
   margin: auto;
   margin-top: 32px;
 
-  button {
+  > button {
     padding: 15px 0;
   }
 `
