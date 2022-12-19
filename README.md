@@ -34,6 +34,7 @@ You can start editing the page by modifying `src/pages/HomePage/index.tsx`. The 
 
 - `styled-components` - fully setup SSR and theming
 - `jest` - unit testing. Run by command `yarn test`
+- `cypress` - e2e testing. Run by command `yarn e2e-test`
 
 ## Code Quality Tools
 
@@ -47,8 +48,6 @@ Respect these tools and do not push non-formated code to the repository.
 - `yarn format:check` - only checks formating issues using prettier
 - `yarn lint:ts` - lints JS and TS file using eslint
 - `yarn lint:css` - lints .CSS files and styled-components using stylelint
-- `yarn test` - runs jest unit test files
-- `yarn e2e-test` - runs cypress e2e test specs
 
 ## Learn More
 
