@@ -1,8 +1,4 @@
-# Next.js Project Starter
-
-"Not so minimal" boilerplate to start building any new [Next.js](https://nextjs.org/) project with styled-components and all linting and testing tools ready, with a highly opinionated folder structure.
-
-As of 06/2022, this setup uses all the new features of Next.js 12.1 and React 18
+# Distance of Route Next.js/React Project
 
 ## Folder Structure
 
@@ -51,6 +47,8 @@ Respect these tools and do not push non-formated code to the repository.
 - `yarn format:check` - only checks formating issues using prettier
 - `yarn lint:ts` - lints JS and TS file using eslint
 - `yarn lint:css` - lints .CSS files and styled-components using stylelint
+- `yarn test` - runs jest unit test files
+- `yarn e2e-test` - runs cypress e2e test specs
 
 ## Learn More
 
