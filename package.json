@@ -11,6 +11,7 @@
     "lint:ts": "next lint",
     "lint:css": "stylelint \"src/**/*.ts\"",
     "test": "jest",
+    "e2e-test": "concurrently --kill-others \"start next dev\" \"start cypress open --e2e --browser chrome\"",
     "type-check": "tsc --pretty --noEmit",
     "prepare": "husky install",
     "precommit": "lint-staged"
@@ -22,6 +23,8 @@
     "@mui/material": "^5.11.0",
     "@mui/x-date-pickers": "^5.0.10",
     "axios": "^1.2.1",
+    "concurrently": "^7.6.0",
+    "cypress": "^12.1.0",
     "dayjs": "^1.11.7",
     "next": "12.2.2",
     "react": "18.2.0",
