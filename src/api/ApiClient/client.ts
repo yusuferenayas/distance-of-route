@@ -1,7 +1,12 @@
 import axios, { AxiosInstance } from 'axios'
 import { apiRoutes } from 'src/constants/routes'
 import { notifyError } from 'src/utils/notification'
-import { ICitiesResponse } from './interface'
+import {
+  ICitiesRequest,
+  ICitiesResponse,
+  IDistanceRequest,
+  IDistanceResponse,
+} from './interface'
 
 class ApiClient {
   axiosApi: AxiosInstance
@@ -18,7 +23,7 @@ class ApiClient {
     axiosApi.interceptors.response.use(
       (response) => response,
       (error) => {
-        notifyError(error)
+        notifyError(error.response.data)
         return error
       }
     )
@@ -29,7 +34,21 @@ class ApiClient {
   fetchCities = async (keyword: string): Promise<ICitiesResponse | null> => {
     const response = await this.axiosApi.get<ICitiesResponse>(
       apiRoutes.fetchCities,
-      { params: { keyword } }
+      { params: { keyword } as ICitiesRequest }
+    )
+
+    return response?.data
+  }
+
+  calculateDistance = async (
+    cityNames: string[]
+  ): Promise<IDistanceResponse | null> => {
+    const response = await this.axiosApi.get<IDistanceResponse>(
+      apiRoutes.fetchDistance,
+      {
+        params: { cityNames } as IDistanceRequest,
+        paramsSerializer: { indexes: null },
+      }
     )
 
     return response?.data

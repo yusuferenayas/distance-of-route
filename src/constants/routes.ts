@@ -1,10 +1,11 @@
 const routes = {
   index: '/',
-  about: '/about',
+  result: '/result',
 }
 
 const apiRoutes = {
   fetchCities: '/api/cities',
+  fetchDistance: '/api/distance',
 }
 
 export { routes, apiRoutes }

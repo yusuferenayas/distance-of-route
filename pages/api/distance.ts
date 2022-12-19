@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { IGeoData } from 'src/api'
+import { IDistanceRequest, IGeoData } from 'src/api'
 import { geoData } from './data/geoData'
 
 const calculateDistance = (
@@ -18,10 +18,10 @@ const calculateDistance = (
   return 12742 * Math.asin(Math.sqrt(a)) // 2 * R; R = 6371 km
 }
 
-const PROVIDE_ROUTE_MESSAGE = 'Please provide routes!'
+const PROVIDE_ROUTE_MESSAGE = 'Please provide valid routes!'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const query = req.query
+  const query = req.query as IDistanceRequest
   const cityNames =
     typeof query.cityNames === 'string' ? [query.cityNames] : query.cityNames
 
@@ -33,8 +33,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const citiesOnRoute: IGeoData[] = []
 
     cityNames.forEach((routeCity) => {
-      const foundCity = geoData.find((city) =>
-        city.name.toLowerCase().includes(routeCity.toLowerCase())
+      const foundCity = geoData.find(
+        (city) => city.name.toLowerCase() === routeCity.toLowerCase()
       )
 
       if (foundCity) {
@@ -42,7 +42,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     })
 
-    if (citiesOnRoute.length < 2) {
+    if (citiesOnRoute.length < 2 || citiesOnRoute.length !== cityCounts) {
       return res.status(500).send(PROVIDE_ROUTE_MESSAGE)
     }
 

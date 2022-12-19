@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { ICitiesRequest } from 'src/api'
 import { geoData } from './data/geoData'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const query = req.query
+  const query = req.query as ICitiesRequest
   const keyword = query.keyword as string
 
   if (!keyword || keyword?.length === 0) {

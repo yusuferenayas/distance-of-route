@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
@@ -12,14 +13,18 @@ import IconButton from '@mui/material/IconButton'
 import AddIcon from '@mui/icons-material/Add'
 import DeleteIcon from '@mui/icons-material/Delete'
 
+import { routes } from 'src/constants/routes'
 import Container from 'src/components/Container'
 import Layout from 'src/components/Layout'
 import AutoCompleteCity from 'src/components/AutoCompleteCity'
 
+import { IResultPageQuery } from '../ResultPage/type'
 import { FormValuesType, defaultFormValues } from './type'
+
 import * as S from './styled'
 
 const HomePage: NextPage = () => {
+  const { push } = useRouter()
   const {
     handleSubmit,
     register,
@@ -49,7 +54,14 @@ const HomePage: NextPage = () => {
   }, [formValues])
 
   const onSubmit = (data: FormValuesType) => {
-    alert(JSON.stringify(data))
+    push({
+      pathname: routes.result,
+      query: {
+        cities: routeCities,
+        numberOfPassenger: data.numberOfPassenger.toString(),
+        dateOfTrip: data.dateOfTrip.toDateString(),
+      } as IResultPageQuery,
+    })
   }
 
   const handleAddCity = () => append({ name: '' })
