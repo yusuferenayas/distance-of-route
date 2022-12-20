@@ -138,8 +138,8 @@ const HomePage: NextPage = () => {
                     <DesktopDatePicker
                       minDate={defaultFormValues.dateOfTrip}
                       label='Date of Trip'
-                      onChange={(event) => {
-                        onChange(event)
+                      onChange={(value) => {
+                        onChange(dayjs(value).toDate())
                       }}
                       renderInput={(params) => (
                         <TextField
