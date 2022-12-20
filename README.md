@@ -1,8 +1,4 @@
-# Next.js Project Starter
-
-"Not so minimal" boilerplate to start building any new [Next.js](https://nextjs.org/) project with styled-components and all linting and testing tools ready, with a highly opinionated folder structure.
-
-As of 06/2022, this setup uses all the new features of Next.js 12.1 and React 18
+# Distance of Route Next.js/React Project
 
 ## Folder Structure
 
@@ -38,6 +34,7 @@ You can start editing the page by modifying `src/pages/HomePage/index.tsx`. The 
 
 - `styled-components` - fully setup SSR and theming
 - `jest` - unit testing. Run by command `yarn test`
+- `cypress` - e2e testing. Run by command `yarn e2e-test`
 
 ## Code Quality Tools
 
